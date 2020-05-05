@@ -13,6 +13,7 @@ class App extends Component {
 
   handleClick(index){
     let newBoard = this.state.board
+
     if(this.state.board[index] == null){
     newBoard[index] = this.state.player
 
@@ -22,29 +23,21 @@ class App extends Component {
      }
     )
     }
-
-     
-
-  }
+}
   
-
 render(){
 
 const Box = this.state.board.map((box,index) =>
-             <div className = "box" key = {index} 
-                onClick = {() => this.handleClick(index)}>
-                {box}
-               </div> )
+             <div className = "box" 
+             key = {index} 
+             onClick = {() => this.handleClick(index)}>
+             {box}
+             </div> )
 
   return (
     <div className="container">
-      <h1> Tic-Tac-Toe</h1>
-      <div className = "board">
-        {Box}
-    
-      </div>
-
-
+        <h1> Tic-Tac-Toe</h1>
+        <div className = "board">{Box}</div>
     </div>
   );
 }
