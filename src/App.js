@@ -20,7 +20,7 @@ render(){
 
 const Box = this.state.board.map((box,index) =>
              <div className = "box" key = {index} 
-                onClick = {this.handleClick}>
+                onClick = {(e) => this.handleClick(e)}>
                 {box}
                </div> )
 
