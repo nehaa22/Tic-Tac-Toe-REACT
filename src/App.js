@@ -6,15 +6,18 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      board : Array(9).fill(null)
+      board : Array(9).fill(null),
+      player : "X"
     }
   }
 
   handleClick(index){
     let newBoard = this.state.board
-    newBoard[index] = "X"
+    newBoard[index] = this.state.player
+    let newPlayer = this.state.player === "X" ? "O" : "X"
      this.setState({
-       board : newBoard
+       board : newBoard,
+       player : newPlayer
      })
 
      
